@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chatbox Embedded Messaging</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;">
+  <title>Chatbox Embedded Messaging</title>
 </head>
 <body>
-    <h1>Chat de Atención al Cliente</h1>
+  <h1>Chat de Atención al Cliente</h1>
+  <p>Podés iniciar una conversación desde el icono de chat abajo a la derecha.</p>
 
-    <script type="text/javascript">
-        function initEmbeddedMessaging() {
-            try {
-                embeddedservice_bootstrap.settings.language = 'es'; // Idioma
+  <script type="text/javascript">
+    function initEmbeddedMessaging() {
+      try {
+        embeddedservice_bootstrap.settings.language = 'es';
 
-                embeddedservice_bootstrap.init(
-                    '00Dcc0000001MHp', // ID de tu organización
-                    'Messaging_for_in_App_Embedded', // Nombre del deployment
-                    'https://acasalud--uat2.sandbox.my.site.com/ESWMessagingforinAppE1734447227418', // URL del sitio Experience Cloud
-                    {
-                        scrt2URL: 'https://acasalud--uat2.sandbox.my.salesforce-scrt.com' // URL de SCRT
-                    }
-                );
-            } catch (err) {
-                console.error('Error loading Embedded Messaging: ', err);
-            }
-        };
-    </script>
+        embeddedservice_bootstrap.init(
+          '00Dcc0000001MHp',
+          'Messaging_for_in_App_Embedded',
+          'https://acasalud--uat2.sandbox.my.site.com/ESWMessagingforinAppE1734447227418',
+          {
+            scrt2URL: 'https://acasalud--uat2.sandbox.my.salesforce-scrt.com'
+          }
+        );
+      } catch (err) {
+        console.error('Error loading Embedded Messaging: ', err);
+      }
+    }
+  </script>
 
-    <script 
-        type="text/javascript"
-        src="https://acasalud--uat2.sandbox.my.site.com/ESWMessagingforinAppE1734447227418/assets/js/bootstrap.min.js"
-        onload="initEmbeddedMessaging()"
-    ></script>
+  <script
+    type="text/javascript"
+    src="https://acasalud--uat2.sandbox.my.site.com/ESWMessagingforinAppE1734447227418/assets/js/bootstrap.min.js"
+    onload="initEmbeddedMessaging()"
+  ></script>
 </body>
 </html>
