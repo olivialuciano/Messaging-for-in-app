@@ -14,7 +14,7 @@
     }
 
     h1 {
-      color: #1e3a8a;
+      color: #1fcf28;
       text-align: center;
     }
 
@@ -31,7 +31,7 @@
     .step {
       margin-bottom: 1rem;
       padding: 1rem;
-      border-left: 6px solid #3b82f6;
+      border-left: 6px solid #1fcf28;
       background-color: #f0f9ff;
       border-radius: 6px;
     }
@@ -39,7 +39,7 @@
     .step strong {
       display: block;
       margin-bottom: 0.3rem;
-      color: #1d4ed8;
+      color: #1fcf28;
     }
 
     code {
@@ -64,10 +64,48 @@
       font-size: 0.85rem;
       color: #6b7280;
     }
+
+    /* --- Estilos personalizados para el chatbot --- */
+    /* Contenedor del chat */
+    #embeddedServiceChat {
+      border-radius: 20px !important;
+      overflow: hidden !important;
+    }
+
+    /* Cambiar color del header y botones a verde */
+    .embeddedServiceSidebarHeader, 
+    .embeddedServiceChatHeader, 
+    .embeddedServiceCloseBtn, 
+    .embeddedServiceMinimizeBtn {
+      background-color: #1fcf28 !important;
+      border-radius: 20px 20px 0 0 !important;
+      color: white !important;
+    }
+
+    /* Opciones del bot como chips */
+    /* Esto puede variar según la estructura del DOM de Salesforce */
+    .embeddedServiceChatMessage .embeddedServiceQuickActionButton {
+      background-color: #1fcf28 !important;
+      color: white !important;
+      border-radius: 50px !important;
+      padding: 8px 18px !important;
+      margin: 4px 6px !important;
+      border: none !important;
+      cursor: pointer !important;
+      font-weight: 600 !important;
+      transition: background-color 0.3s ease !important;
+      box-shadow: 0 2px 6px rgba(31, 207, 40, 0.4) !important;
+      display: inline-block !important;
+    }
+    .embeddedServiceChatMessage .embeddedServiceQuickActionButton:hover {
+      background-color: #16a020 !important;
+    }
   </style>
 </head>
 <body>
-  <h1>🧠 Guía para Integrar el Chatbot de Salesforce</h1>
+      <h1>AVALIAN - instructivo</h1>
+
+  <h1>Guía para Integrar el Chatbot de Salesforce en una página</h1>
 
   <div class="steps">
     <div class="step">
@@ -119,7 +157,7 @@
   </div>
 
   <footer>
-    Desarrollado con 💙 para integraciones Salesforce – Última actualización: 2025
+    Hecho con amor para integraciones Salesforce – Oli
   </footer>
 
   <!-- Código funcional del chatbot -->
@@ -127,6 +165,13 @@
     function initEmbeddedMessaging() {
       try {
         embeddedservice_bootstrap.settings.language = 'es';
+
+        // Personalización de colores básica (opcional)
+        embeddedservice_bootstrap.settings.theme = {
+          baseCore: '#1fcf28',
+          baseAccent: '#16a020',
+          fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+        };
 
         embeddedservice_bootstrap.init(
           '00Dcc0000001MHp',
