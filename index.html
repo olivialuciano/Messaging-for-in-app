@@ -161,36 +161,35 @@
   </footer>
 
   <!-- Código funcional del chatbot -->
-  <script type="text/javascript">
-    function initEmbeddedMessaging() {
-      try {
-        embeddedservice_bootstrap.settings.language = 'es';
-
-        // Personalización de colores básica (opcional)
-        embeddedservice_bootstrap.settings.theme = {
-          baseCore: '#1fcf28',
-          baseAccent: '#16a020',
-          fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
-        };
-
-        embeddedservice_bootstrap.init(
-          '00Dcc0000001MHp',
-          'Messaging_for_in_App_Embedded',
-          'https://acasalud--uat2.sandbox.my.site.com/ESWMessagingforinAppE1734447227418',
-          {
-            scrt2URL: 'https://acasalud--uat2.sandbox.my.salesforce-scrt.com'
-          }
-        );
-      } catch (err) {
-        console.error('Error loading Embedded Messaging: ', err);
-      }
+  <script>
+  function initEmbeddedMessaging() {
+    try {
+      embeddedservice_bootstrap.settings.language = "es";
+      embeddedservice_bootstrap.settings.theme = {
+        baseCore: "#1fcf28",
+        baseAccent: "#16a020",
+        fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+        buttonTextColor: "#fff",
+        buttonBackgroundColor: "#1fcf28",
+        chatHeaderBackgroundColor: "#1fcf28",
+        chatHeaderTextColor: "#fff",
+        widgetBackgroundColor: "#f2f7ff"
+      };
+      embeddedservice_bootstrap.init(
+        "00Dcc0000001MHp",
+        "Messaging_for_in_App_Embedded",
+        "https://acasalud--uat2.sandbox.my.site.com/ESWMessagingforinAppE1734447227418",
+        {
+          scrt2URL: "https://acasalud--uat2.sandbox.my.salesforce-scrt.com"
+        }
+      );
+    } catch (e) {
+      console.error("Error loading Embedded Messaging: ", e);
     }
-  </script>
+  }
+</script>
 
-  <script
-    type="text/javascript"
-    src="https://acasalud--uat2.sandbox.my.site.com/ESWMessagingforinAppE1734447227418/assets/js/bootstrap.min.js"
-    onload="initEmbeddedMessaging()"
-  ></script>
+<script src="https://acasalud--uat2.sandbox.my.site.com/ESWMessagingforinAppE1734447227418/assets/js/bootstrap.min.js" onload="initEmbeddedMessaging()"></script>
+
 </body>
 </html>
