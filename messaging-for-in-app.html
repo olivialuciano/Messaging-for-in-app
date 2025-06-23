@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbox Embedded Messaging</title>
+</head>
+<body>
+    <h1>Chat de Atención al Cliente</h1>
+
+    <script type="text/javascript">
+        function initEmbeddedMessaging() {
+            try {
+                embeddedservice_bootstrap.settings.language = 'es'; // Idioma
+
+                embeddedservice_bootstrap.init(
+                    '00Dcc0000001MHp', // ID de tu organización
+                    'Messaging_for_in_App_Embedded', // Nombre del deployment
+                    'https://acasalud--uat2.sandbox.my.site.com/ESWMessagingforinAppE1734447227418', // URL del sitio Experience Cloud
+                    {
+                        scrt2URL: 'https://acasalud--uat2.sandbox.my.salesforce-scrt.com' // URL de SCRT
+                    }
+                );
+            } catch (err) {
+                console.error('Error loading Embedded Messaging: ', err);
+            }
+        };
+    </script>
+
+    <script 
+        type="text/javascript"
+        src="https://acasalud--uat2.sandbox.my.site.com/ESWMessagingforinAppE1734447227418/assets/js/bootstrap.min.js"
+        onload="initEmbeddedMessaging()"
+    ></script>
+</body>
+</html>
